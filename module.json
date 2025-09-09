@@ -1,0 +1,38 @@
+{
+  "id": "Valombreuse5eGMG",
+  "title": "Valombreuse5eGMG",
+  "description": "Valombreuse Gamemaster Guide 5e compliant",
+  "authors": [
+    {
+      "name": "SEG91",
+      "url": "https://github.com/SEG91",
+      "flags": {}
+    }
+  ],
+  "version": "0.0.1",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "13.346"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json",
+        "compatibility": {
+          "verified": "5.0.4"
+        }
+      }
+    ]
+  },
+  "styles": [
+      "valombreuse.css"
+  ],
+  "url": "https://github.com/SEG91/Valombreuse5eGMG",
+  "manifest": "https://raw.githubusercontent.com/SEG91/Valombreuse5eGMG/main/module.json",
+  "download": "https://github.com/SEG91/Valombreuse5eGMG/archive/main.zip",
+  "esmodules": [
+    "module/valombreuseGMG.js"
+  ]
+}

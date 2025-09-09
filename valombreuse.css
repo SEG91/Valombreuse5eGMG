@@ -1,0 +1,156 @@
+.valombreuse-journal {
+  text-align: justify;
+  padding-bottom: 2em;
+  background-color: #FDF8F0;
+}
+/* ----------------------------------------- */
+/*  LOCAL FONTS                             */
+/* ----------------------------------------- */
+@font-face {
+  font-family: "LibreBaskerville";
+  font-style: bold;
+  font-weight: 400;
+  src: url("../fonts/LibreBaskerville-Bold.ttf");
+}
+
+@font-face {
+  font-family: "LibreBaskerville";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/LibreBaskerville-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Vollkorn";
+  font-style: bold;
+  font-weight: 400;
+  src: url("../fonts/Vollkorn-VariableFont_wght.ttf");
+}
+
+.valombreuse-journal h1 {
+  font-family: "LibreBaskerville", serif;
+  text-align: left;
+  color: #F0122D;
+  font-size: 30px;
+  border: none;
+  margin: 1em auto;
+  position: relative;
+}
+
+.valombreuse-journal h2 {
+  font-family: "LibreBaskerville", serif;
+  text-align: left;
+  color: #F0122D;
+  font-size: 25px;
+  text-decoration: underline;
+  text-decoration-color: #C6AB67;
+  text-decoration-style: solid;
+}
+
+.valombreuse-journal h3 {
+  font-family: "LibreBaskerville", serif;
+  text-align: left;
+  color: #F0122D;
+  font-size: 16px;
+  border: none;
+  margin: 1em auto;
+  position: relative;
+}
+
+.valombreuse-journal cb {
+  font-family: "Vollkorn", serif;
+  text-align: justify;
+  color: #000000;
+  font-size: 13px;
+  border: none;
+  margin: 1em auto;
+  position: relative;
+}
+.valombreuse-journal sub {
+  font-family: "LibreBaskerville", serif;
+  text-align: center;
+  color: #F0122D3;
+  font-size: 13px;
+  font-style: italic;
+  border: none;
+  margin: 1em auto;
+  position: relative;
+}
+
+.valombreuse-journal p {
+  margin: 0 1em 1em 1em;
+  text-indent: 1em;
+  color: #000000;
+}
+.valombreuse-journal p.indent {
+  text-indent: 1em;
+  margin-bottom: 0;
+}
+.valombreuse-journal p.noindent {
+  text-indent: 0em;
+}
+
+.valombreuse-journal .imgcenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+}
+
+.valombreuse-journal .float-content:before,
+.valombreuse-journal .float-content:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.valombreuse-journal .imgtitre {
+  float: left;
+  box-shadow: 0 3px 10px #1f546f;
+  margin: 0px 10px 5px 7px;
+}
+.valombreuse-journal .imgright20 {
+  float: right;
+  max-width: 20%;
+  border: none;
+  margin: 5px; 
+}
+.valombreuse-journal .imgright40 {
+  float: right;
+  max-width: 40%;
+  margin: 5px;
+  border: none;
+}
+.valombreuse-journal .imgleft20 {
+  float: left;
+  max-width: 20%;
+  margin: 5px;
+  border: none;
+}
+.valombreuse-journal .imgleft40 {
+  float: left;
+  max-width: 40%;
+  margin: 5px;
+  border: none;
+}
+.valombreuse-journal th, td {
+  text-align: center;
+}
+.valombreuse-journal .conseil-image {
+  width: 50px;
+  height: 50px;
+  border: none;
+  float: left;
+  margin-right: 10px;
+}
+
+.valombreuse-journal .conseil-foundry {
+  background-color: #ff66008e;
+  text-indent: 0cm;
+  border-style: solid;
+  border: 2px solid black;
+  border-radius: 8px 8px 8px 8px;
+  box-shadow: 0 8px 8px -7px var(--color-shadow-dark);
+  padding: 10px 14px 16px 18px;
+}
