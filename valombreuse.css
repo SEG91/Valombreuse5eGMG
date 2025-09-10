@@ -134,7 +134,11 @@
   margin: 5px;
   border: none;
 }
-.valombreuse-journal th, td {
+.valombreuse-journal th {
+  text-align: center;
+}
+
+.valombreuse-journal  td {
   text-align: center;
 }
 .valombreuse-journal .conseil-image {
