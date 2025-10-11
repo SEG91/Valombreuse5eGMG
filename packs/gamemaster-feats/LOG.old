@@ -1,0 +1,8 @@
+2025/10/11-07:39:02.032 92e0 Recovering log #1087
+2025/10/11-07:39:02.051 92e0 Delete type=0 #1087
+2025/10/11-07:39:02.051 92e0 Delete type=3 #1085
+2025/10/11-07:46:54.798 6cac Level-0 table #1092: started
+2025/10/11-07:46:54.798 6cac Level-0 table #1092: 0 bytes OK
+2025/10/11-07:46:54.806 6cac Delete type=0 #1090
+2025/10/11-07:46:54.830 6cac Manual compaction at level-0 from '!items!8L4qPTF4WMm1V5Nm' @ 72057594037927935 : 1 .. '!items!uOnQj23Qctqi2gEn' @ 0 : 0; will stop at (end)
+2025/10/11-07:46:54.830 6cac Manual compaction at level-1 from '!items!8L4qPTF4WMm1V5Nm' @ 72057594037927935 : 1 .. '!items!uOnQj23Qctqi2gEn' @ 0 : 0; will stop at (end)

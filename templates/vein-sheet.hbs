@@ -1,0 +1,57 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <div class="valombreuse wrap valombreuse-bg-std">
+
+    <!-- HEADER -->
+    <div class="header" role="banner" aria-label="Bannière supérieure">
+      <div class="valombreuse center" id="logo-banner" title="Logo Valombreuse">
+        <img src="/modules/valombreuse5egmg/assets/images/Valombreuse-Logo.webp"
+             alt="Valombreuse" loading="lazy" decoding="async" />
+      </div>
+    </div>
+
+    <!-- HERO + MEMBERS -->
+    {{> "modules/valombreuse5egmg/templates/vein-header.hbs"}}
+    {{> "modules/valombreuse5egmg/templates/vein-members.hbs"}}
+
+    <!-- CONTENU PRINCIPAL -->
+    <div class="valombreuse flexrow main mainHeight_std">
+      <div class="valombreuse content flex3">
+
+        {{!-- Onglets de navigation --}}
+       <nav class="sheet-tabs tabs" data-group="primary" aria-label="Navigation de fiche">
+          <a class="item titleFont" data-tab="diplomacy">  
+            {{ localize "Valombreuse5eGMG.tabs.diplomacy" }}
+          </a>
+          <a class="item titleFont" data-tab="secrets">
+            {{ localize "Valombreuse5eGMG.tabs.secrets" }}
+          </a>
+          <a class="item titleFont" data-tab="powers">
+            {{ localize "Valombreuse5eGMG.tabs.powers" }}
+          </a>
+        </nav>
+
+        {{!-- Corps des onglets --}}
+        <section class="sheet-body">
+            <div class="tab stats" data-group="primary" data-tab="diplomacy">
+              {{> "modules/valombreuse5egmg/templates/vein-diplomacy.hbs"}}
+            </div>
+            <div class="tab secrets" data-group="primary" data-tab="secrets">
+            {{> "modules/valombreuse5egmg/templates/vein-secret.hbs"}}
+            </div>
+            <div class="tab powers" data-group="primary" data-tab="powers">
+              {{> "modules/valombreuse5egmg/templates/vein-powers.hbs"}}
+            </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer" role="footer" aria-label="Bannière inférieure">
+      <div class="valombreuse center" id="logo-banner" title="Logo Valombreuse">
+        <img src="/modules/valombreuse5egmg/assets/images/Valombreuse-Logo.webp"
+             alt="Valombreuse" loading="lazy" decoding="async" />
+      </div>
+    </div>
+
+  </div>
+</form>

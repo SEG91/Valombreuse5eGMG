@@ -9,9 +9,9 @@
       "flags": {}
     }
   ],
-  "version": "0.0.2",
+  "version": "0.0.3",
   "compatibility": {
-    "minimum": "11",
+    "minimum": "13",
     "verified": "13.346"
   },
   "relationships": {
@@ -21,7 +21,7 @@
         "type": "system",
         "manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json",
         "compatibility": {
-          "verified": "5.0.4"
+          "verified": "4.3.9"
         }
       }
     ]
@@ -32,6 +32,11 @@
   "url": "https://github.com/SEG91/Valombreuse5eGMG",
   "manifest": "https://raw.githubusercontent.com/SEG91/Valombreuse5eGMG/main/module.json",
   "download": "https://github.com/SEG91/Valombreuse5eGMG/archive/main.zip",
+  "dnd5e": {
+      "sourceBooks": {
+        "Valombreuse GMG": "SOURCE.BOOK.VALOMBREUSEGMG"
+      }
+    },
   "packs": [
     {
       "label": "Gamemaster Rules",
@@ -45,8 +50,29 @@
       },
       "flags": {},
       "banner": "modules/Valombreuse5eGMG/assets/images/coverGMG.png"
+    },
+    {
+      "label": "Gamemaster Feats",
+      "type": "Item",
+      "name": "gamemaster-feats",
+      "path": "packs/gamemaster-feats",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {},
+      "banner": "modules/Valombreuse5eGMG/assets/images/coverGMG.png"
     }
   ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json",
+            "flags": {}
+        }
+    ],
   "esmodules": [
     "module/valombreuseGMG.js"
   ]
