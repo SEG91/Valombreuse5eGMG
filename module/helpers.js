@@ -176,5 +176,10 @@ Handlebars.registerHelper("range", function(from, to, options) {
   return result;
 });
 
+Handlebars.registerHelper("defaultArray", function (arr) {
+  return Array.isArray(arr) ? arr : [];
+});
+
 
 }
+

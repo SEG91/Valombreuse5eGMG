@@ -3708,3 +3708,199 @@
   overflow: auto; 
   max-height: var(--vein-secrets-max-h, 100%); /* adapte si tu as une hauteur de sheet fixe */
 }
+
+/* ---- Odyssey sheet header ---- */
+.odyssey-sheet .odyssey-header {
+  padding: 10px 12px;
+}
+
+.odyssey-sheet .odyssey-title-row {
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.odyssey-sheet .vein-label {
+  font-family: "CharlemagneStd", serif;
+  color: #003c1e;
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+.odyssey-sheet .odyssey-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.odyssey-sheet .meta-field {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.odyssey-sheet .vein-pill {
+  border: none;
+  background: #286e1f;      /* vert veine */
+  color: #fff;
+  border-radius: 16px;
+  padding: 4px 10px;
+  height: 26px;
+  line-height: 18px;
+  font: bold 18px "Caveat", cursive; /* cohérent avec tes champs header vein */
+}
+
+.odyssey-sheet .odyssey-flavor {
+  font-style: italic;
+  color: #4f7783;
+  margin: 4px 4px 12px 4px;
+}
+
+/* ---- Sections ---- */
+.odyssey-sheet .odyssey-section {
+  padding: 0 12px 12px 12px;
+}
+
+.odyssey-sheet .odyssey-section h2 {
+  font-family: "LibreBaskerville", serif;
+  color: #F0122D;
+  margin: 8px 0 4px 0;
+  border: none;
+}
+
+.odyssey-sheet .hint {
+  font-size: 12px;
+  color: #666;
+  margin-top: 6px;
+}
+
+.odyssey-sheet .empty {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* ---- Tables ---- */
+.odyssey-sheet .odyssey-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255,255,255,0.7);
+}
+
+.odyssey-sheet .odyssey-table th,
+.odyssey-sheet .odyssey-table td {
+  border: 1px solid #736953a6;
+  padding: 6px;
+  text-align: left;
+}
+
+.odyssey-sheet .odyssey-table tfoot td {
+  font-weight: bold;
+}
+
+.odyssey-sheet .od-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 2px 4px;
+}
+
+.odyssey-sheet .btn.add-row {
+  margin-top: 6px;
+  border: 1px solid #736953a6;
+  background: rgba(0,0,0,0.05);
+  padding: 4px 8px;
+  cursor: pointer;
+}
+.odyssey-sheet .btn.add-row:hover {
+  background: rgba(0,0,0,0.2);
+}
+
+.od-section { margin: 10px 0 14px 0; }
+.od-section__header { display:flex; align-items:center; gap:8px; justify-content: space-between; }
+.od-hint { margin: 4px 0 8px; font-size: 12px; opacity: .8; }
+.od-summary, .od-notes { width: 100%; }
+.od-excerpt { font-style: italic; font-weight: 600; }
+.od-blocklist { display:flex; flex-direction:column; gap:6px; margin: 8px 0; }
+.od-block__textarea { width:100%; resize:vertical; min-height:40px; }
+
+/* ==== ODYSSEY HEADER ICON VERSION ==== */
+.odyssey-header {
+  background: rgba(18, 22, 18, 0.9);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.odyssey-header__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.odyssey-header__icon {
+  flex: 0 0 auto;
+}
+
+.odyssey-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 3px solid #1c4a28;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  object-fit: cover;
+  transition: all 0.4s ease;
+}
+
+/* Halo vert animé au survol */
+.odyssey-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 4px rgba(50, 200, 120, 0.7);
+}
+
+.odyssey-header__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+/* Inputs stylés comme Vein header */
+.odyssey-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.odyssey-label {
+  font-family: "Cinzel", serif;
+  color: #d6eed3;
+  font-weight: 600;
+  width: 130px;
+}
+
+.odyssey-input {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 0.6rem;
+  border: 1px solid #1c4a28;
+  padding: 0.3rem 0.6rem;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.odyssey-input:focus {
+  outline: none;
+  box-shadow: 0 0 4px 2px rgba(40, 150, 90, 0.5);
+}
+
+.odyssey-value {
+  color: #f6f6f6;
+  font-size: 1rem;
+}

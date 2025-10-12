@@ -30,5 +30,56 @@
    "Valombreuse5eGMG.powers.open" : "Open Vein Power",
    "Valombreuse5eGMG.powers.remove" : "Remove Vein Power",
    "Valombreuse5eGMG.powers.none" : "No vein power known",
-   "Valombreuse5eGMG.tabs.powers": "Vein Powers"
+   "Valombreuse5eGMG.tabs.powers": "Vein Powers",
+    "Valombreuse5eGMG.CreateOdyssey": "Create Odyssey",
+  "Valombreuse5eGMG.Odyssey.AddPage": "Add Page",
+  "Valombreuse5eGMG.Odyssey.OpenAll": "Open All Pages",
+  "Valombreuse5eGMG.Odyssey.AddRow": "Add Row",
+
+  "Valombreuse5eGMG.Odyssey.Header.Title": "Odyssey Title",
+  "Valombreuse5eGMG.Odyssey.Header.TitlePH": "e.g. Odyssey XIII — The Ruins of Karthos",
+  "Valombreuse5eGMG.Odyssey.Header.Date": "Date (Céphéus Calendar)",
+  "Valombreuse5eGMG.Odyssey.Header.DatePH": "Spring 11941, 3rd Moon of Ashes",
+  "Valombreuse5eGMG.Odyssey.Header.Region": "Region Explored",
+  "Valombreuse5eGMG.Odyssey.Header.RegionPH": "Framentor Peaks, Grinardie Plains, etc.",
+  "Valombreuse5eGMG.Odyssey.Header.GM": "Game Master",
+  "Valombreuse5eGMG.Odyssey.Header.GMPH": "Optional",
+  "Valombreuse5eGMG.Odyssey.Header.Flavor": "Each Odyssey records the deeds and echoes of a chapter in the Vein’s journey. These journals are fragments of living history, carved into the blood of Céphéus.",
+
+  "Valombreuse5eGMG.Odyssey.S1.Title": "1. Narrative Summary",
+  "Valombreuse5eGMG.Odyssey.S1.Help": "Write a 5–10 line epic summary from the Vein’s collective perspective — describe the journey, the conflict, and its resolution.",
+  
+  "Valombreuse5eGMG.Odyssey.S2.Title": "2. Decisions and Consequences",
+  "Valombreuse5eGMG.Odyssey.S2.Col.Decision": "Decision",
+  "Valombreuse5eGMG.Odyssey.S2.Col.Impact": "Narrative Impact",
+  "Valombreuse5eGMG.Odyssey.S2.Col.Repercussion": "Repercussion on Céphéus / the Vein",
+  "Valombreuse5eGMG.Odyssey.S2.Hint": "These entries allow the GM to adjust Diplomacy scores, relationships, or trigger long-term consequences.",
+  
+  "Valombreuse5eGMG.Odyssey.S3.Title": "3. Secrets Uncovered",
+  "Valombreuse5eGMG.Odyssey.S3.Col.Type": "Type of Secret",
+  "Valombreuse5eGMG.Odyssey.S3.Col.Name": "Name / Description",
+  "Valombreuse5eGMG.Odyssey.S3.Col.Rank": "Rank",
+  "Valombreuse5eGMG.Odyssey.S3.Col.Awakening": "Awakening Points Gained",
+  "Valombreuse5eGMG.Odyssey.S3.Total": "Total Awakening Gained",
+  "Valombreuse5eGMG.Odyssey.S3.Hint": "These values update the Vein’s Awakening score on its main Foundry sheet.",
+  
+  "Valombreuse5eGMG.Odyssey.S4.Title": "4. Rewards and Consequences",
+  "Valombreuse5eGMG.Odyssey.S4.Col.Type": "Type",
+  "Valombreuse5eGMG.Odyssey.S4.Col.Details": "Description / Details",
+  "Valombreuse5eGMG.Odyssey.S4.Col.Related": "Related To",
+  "Valombreuse5eGMG.Odyssey.S4.Hint": "Record the tangible and intangible rewards earned by the Vein — relics recovered, alliances forged, or divine favors received. These entries may also note long-term consequences on kingdoms, factions, or individuals.",
+
+  
+  "Valombreuse5eGMG.Odyssey.S5.Title": "5. Game Master Notes",
+  "Valombreuse5eGMG.Odyssey.S5.Help": "A private space for the GM to record upcoming plot threads, divine omens, or adjustments to the world state. This section can be hidden from players via Foundry permissions.",
+  
+  "Valombreuse5eGMG.Odyssey.S6.Title": "6. Odyssey Excerpt",
+  "Valombreuse5eGMG.Odyssey.S6.PH": "“Blood always remembers. Even when the heart forgets.”",
+  
+  "Valombreuse5eGMG.Odyssey.S7.Title": "7. Linked Entries",
+  "Valombreuse5eGMG.Odyssey.S7.Hint": "Automatically or manually link related Foundry documents (Secrets, Powers, NPCs, Kingdoms…).",
+  "Valombreuse5eGMG.Odyssey.S7.Empty": "No linked entries yet.",
+
+  "Valombreuse5eGMG.Odyssey.SheetLabel": "Odyssey Journal Sheet",
+  "Valombreuse5eGMG.Odyssey.NewPage": "New Odyssey Page"
 }

@@ -1,0 +1,226 @@
+<form class="{{cssClass}} odyssey-sheet" autocomplete="off">
+
+  <!-- =========================== -->
+  <!-- HEADER ODYSSEY ICON + FIELDS -->
+  <!-- =========================== -->
+  <section class="odyssey-header" aria-label="{{ localize 'Valombreuse5eGMG.Odyssey.Title' }}">
+    <div class="odyssey-header__wrapper">
+      
+      <!-- Icône compacte à gauche -->
+      <div class="odyssey-header__icon">
+        <img src="/modules/valombreuse5egmg/assets/icons/Odyssey.webp"
+             alt="Odyssey Emblem"
+             class="odyssey-icon"
+             title="Odyssey of the Vein" />
+      </div>
+
+      <!-- Champs d'entête -->
+      <div class="odyssey-header__fields">
+        <!-- Nom -->
+        <div class="odyssey-line">
+          <span class="odyssey-label">{{ localize 'Valombreuse5eGMG.Odyssey.Header.Title' }}</span>
+          {{#if editable}}
+            <input class="odyssey-input"
+                   type="text"
+                   name="name"
+                   value="{{document.name}}"
+                   data-autosave />
+          {{else}}
+            <span class="odyssey-value">{{document.name}}</span>
+          {{/if}}
+        </div>
+
+        <!-- Date -->
+        <div class="odyssey-line">
+          <span class="odyssey-label">{{ localize 'Valombreuse5eGMG.Odyssey.Header.Date' }}</span>
+          {{#if editable}}
+            <input class="odyssey-input"
+                   type="text"
+                   name="flags.Valombreuse5eGMG.odyssey.header.date"
+                   value="{{odyssey.header.date}}"
+                   placeholder="{{ localize 'Valombreuse5eGMG.Odyssey.Header.DatePH' }}"
+                   data-autosave />
+          {{else}}
+            <span class="odyssey-value">{{odyssey.header.date}}</span>
+          {{/if}}
+        </div>
+
+        <!-- Région -->
+        <div class="odyssey-line">
+          <span class="odyssey-label">{{ localize 'Valombreuse5eGMG.Odyssey.Header.Region' }}</span>
+          {{#if editable}}
+            <input class="odyssey-input"
+                   type="text"
+                   name="flags.Valombreuse5eGMG.odyssey.header.region"
+                   value="{{odyssey.header.region}}"
+                   placeholder="{{ localize 'Valombreuse5eGMG.Odyssey.Header.RegionPH' }}"
+                   data-autosave />
+          {{else}}
+            <span class="odyssey-value">{{odyssey.header.region}}</span>
+          {{/if}}
+        </div>
+
+        <!-- MJ -->
+        <div class="odyssey-line">
+          <span class="odyssey-label">{{ localize 'Valombreuse5eGMG.Odyssey.Header.GM' }}</span>
+          {{#if editable}}
+            <input class="odyssey-input"
+                   type="text"
+                   name="flags.Valombreuse5eGMG.odyssey.header.gm"
+                   value="{{odyssey.header.gm}}"
+                   placeholder="{{ localize 'Valombreuse5eGMG.Odyssey.Header.GMPH' }}"
+                   data-autosave />
+          {{else}}
+            <span class="odyssey-value">{{odyssey.header.gm}}</span>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ -->
+  <!-- SECTION 1 : NARRATIVE SUMMARY -->
+  <!-- ============================ -->
+  <section class="od-section" data-block="summary">
+    <header class="od-section__header">
+      <h2>{{ localize "Valombreuse5eGMG.Odyssey.S1.Title" }}</h2>
+    </header>
+    <p class="od-hint">{{ localize "Valombreuse5eGMG.Odyssey.S1.Hint" }}</p>
+
+    {{#if editable}}
+      <textarea class="od-summary odyssey-input"
+                rows="6"
+                name="flags.Valombreuse5eGMG.odyssey.summary"
+                data-autosave>{{odyssey.summary}}</textarea>
+    {{else}}
+      <div class="od-summary-readonly">{{odyssey.summary}}</div>
+    {{/if}}
+  </section>
+
+  <!-- ============================ -->
+  <!-- SECTION 2 : DECISIONS -->
+  <!-- ============================ -->
+  <section class="od-section" data-block="decisions">
+    <header class="od-section__header">
+      <h2>{{ localize "Valombreuse5eGMG.Odyssey.S2.Title" }}</h2>
+      {{#if editable}}
+        <button type="button" class="action-button" data-action="addBlock" data-target="decisions">
+          <i class="fa-solid fa-plus"></i> {{ localize "Valombreuse5eGMG.Odyssey.AddRow" }}
+        </button>
+      {{/if}}
+    </header>
+    <p class="od-hint">{{ localize "Valombreuse5eGMG.Odyssey.S2.Hint" }}</p>
+
+    <div class="od-blocklist" data-target="decisions">
+      {{#each odyssey.decisions as |text idx|}}
+        <div class="od-block" data-index="{{idx}}">
+          {{#if ../editable}}
+            <textarea class="od-block__textarea odyssey-input"
+                      rows="2"
+                      data-target="decisions"
+                      data-index="{{idx}}">{{text}}</textarea>
+          {{else}}
+            <div class="od-block__text">{{text}}</div>
+          {{/if}}
+        </div>
+      {{/each}}
+    </div>
+  </section>
+
+  <!-- ============================ -->
+  <!-- SECTION 3 : SECRETS -->
+  <!-- ============================ -->
+  <section class="od-section" data-block="secrets">
+    <header class="od-section__header">
+      <h2>{{ localize "Valombreuse5eGMG.Odyssey.S3.Title" }}</h2>
+      {{#if editable}}
+        <button type="button" class="action-button" data-action="addBlock" data-target="secrets">
+          <i class="fa-solid fa-plus"></i> {{ localize "Valombreuse5eGMG.Odyssey.AddRow" }}
+        </button>
+      {{/if}}
+    </header>
+    <p class="od-hint">{{ localize "Valombreuse5eGMG.Odyssey.S3.Hint" }}</p>
+
+    <div class="od-blocklist" data-target="secrets">
+      {{#each odyssey.secrets as |text idx|}}
+        <div class="od-block" data-index="{{idx}}">
+          {{#if ../editable}}
+            <textarea class="od-block__textarea odyssey-input"
+                      rows="2"
+                      data-target="secrets"
+                      data-index="{{idx}}">{{text}}</textarea>
+          {{else}}
+            <div class="od-block__text">{{text}}</div>
+          {{/if}}
+        </div>
+      {{/each}}
+    </div>
+  </section>
+
+  <!-- ============================ -->
+  <!-- SECTION 4 : REWARDS -->
+  <!-- ============================ -->
+  <section class="od-section" data-block="rewards">
+    <header class="od-section__header">
+      <h2>{{ localize "Valombreuse5eGMG.Odyssey.S4.Title" }}</h2>
+      {{#if editable}}
+        <button type="button" class="action-button" data-action="addBlock" data-target="rewards">
+          <i class="fa-solid fa-plus"></i> {{ localize "Valombreuse5eGMG.Odyssey.AddRow" }}
+        </button>
+      {{/if}}
+    </header>
+    <p class="od-hint">{{ localize "Valombreuse5eGMG.Odyssey.S4.Hint" }}</p>
+
+    <div class="od-blocklist" data-target="rewards">
+      {{#each odyssey.rewards as |text idx|}}
+        <div class="od-block" data-index="{{idx}}">
+          {{#if ../editable}}
+            <textarea class="od-block__textarea odyssey-input"
+                      rows="2"
+                      data-target="rewards"
+                      data-index="{{idx}}">{{text}}</textarea>
+          {{else}}
+            <div class="od-block__text">{{text}}</div>
+          {{/if}}
+        </div>
+      {{/each}}
+    </div>
+  </section>
+
+  <!-- ============================ -->
+  <!-- SECTION 5 : GM NOTES -->
+  <!-- ============================ -->
+  <section class="od-section" data-block="gmnotes">
+    <header class="od-section__header">
+      <h2>{{ localize "Valombreuse5eGMG.Odyssey.S5.Title" }}</h2>
+    </header>
+    {{#if editable}}
+      <textarea class="od-notes odyssey-input"
+                rows="4"
+                name="flags.Valombreuse5eGMG.odyssey.gmnotes"
+                data-autosave>{{odyssey.gmnotes}}</textarea>
+    {{else}}
+      <div class="od-notes-readonly">{{odyssey.gmnotes}}</div>
+    {{/if}}
+  </section>
+
+  <!-- ============================ -->
+  <!-- SECTION 6 : EXCERPT -->
+  <!-- ============================ -->
+  <section class="od-section" data-block="excerpt">
+    <header class="od-section__header">
+      <h2>{{ localize "Valombreuse5eGMG.Odyssey.S6.Title" }}</h2>
+    </header>
+    {{#if editable}}
+      <input class="odyssey-input"
+             type="text"
+             name="flags.Valombreuse5eGMG.odyssey.excerpt"
+             value="{{odyssey.excerpt}}"
+             placeholder="{{ localize 'Valombreuse5eGMG.Odyssey.S6.PH' }}"
+             data-autosave />
+    {{else}}
+      <div class="od-excerpt">“{{odyssey.excerpt}}”</div>
+    {{/if}}
+  </section>
+
+</form>

@@ -9,9 +9,12 @@ import { ValombreuseSecretSheet } from "./secret-sheet.js";
 import { preloadHandlebarsTemplates } from "./templates.js";
 import { registerHandlebarsHelpers } from "./helpers.js";
 
+import { OdysseyEntrySheet } from "./odyssey-entry-sheet.js";
+import { installOdysseyJournalButton } from "./odyssey-ui.js";
+import { OdysseyManager } from "./odyssey-manager.js";
 
 export const VE_MODULE_NAME = 'Valombreuse5eGMG';
-
+const DSC = foundry.applications.apps.DocumentSheetConfig;
 
 
 
@@ -40,28 +43,66 @@ game.dnd5e.config.lootTypes.secretgenesis = { label: game.i18n.format(VE_MODULE_
     label: "Valombreuse5eGMG.SheetClassSecret"
   });
 
+
  
 
- // Preload Handlebars Templates
-    preloadHandlebarsTemplates();
+ await preloadHandlebarsTemplates();
+  registerHandlebarsHelpers();
+  installOdysseyJournalButton();
 
-    // Register Handlebars helpers
-    registerHandlebarsHelpers();
-
-
-    
     console.info("ValombreuseGMG : Init Done");
 
 });
 
 Hooks.once("setup", () => {
-  console.info("ValombreuseGMG : Setup...");
+  console.info("ValombreuseGMG : Setup check...");
+
+  
+  console.info("ValombreuseGMG : Setup done.");
+});
+
+Hooks.once("i18nInit", async function () {
+    console.info("ValombreuseGMG : i18nInit check...");
+
+    foundry.applications.apps.DocumentSheetConfig.registerSheet(JournalEntry, "Valombreuse5eGMG", OdysseyEntrySheet, {
+        canBeDefault: false, 
+        makeDefault: false,
+        label: `${game.i18n.localize('Valombreuse5eGMG.Sheet.Odyssey')}`,
+    });
+
+    console.info("ValombreuseGMG : i18nInit done.");
 });
 
 
-  /* -------------------------------------------- */
-
-Hooks.once("ready", function () {
+ /* -------------------------------------------- */
+/*  READY                                       */
+/* -------------------------------------------- */
+Hooks.once("ready", async function () {
   console.info("ValombreuseGMG : Ready...");
+game.odysseymanager = new OdysseyManager();
+ 
+  console.info("ValombreuseGMG : Ready done.");
+});
+
+/* -------------------------------------------- */
+/*  AUTO-OUVERTURE DE LA BONNE FEUILLE          */
+/* -------------------------------------------- */
+Hooks.on("renderJournalEntry", async (app, html) => {
+  try {
+    const doc = app.document ?? app.object;
+    if (!(doc instanceof JournalEntry)) return;
+
+    const isOdy = doc.getFlag(VE_MODULE_NAME, "type") === "odyssey";
+    if (!isOdy) return;
+    if (app instanceof OdysseyEntrySheet) return;
+
+    console.log(`${VE_MODULE_NAME} | Switching to OdysseyEntrySheet for`, doc.name);
+
+    await app.close({ force: true });
+    const sheet = new OdysseyEntrySheet(doc, app.options);
+    sheet.render(true);
+  } catch (err) {
+    console.error(`${VE_MODULE_NAME} | renderJournalEntry switch failed`, err);
+  }
 });
 
