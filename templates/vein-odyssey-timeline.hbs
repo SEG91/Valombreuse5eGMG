@@ -1,0 +1,49 @@
+<section class="directory vein-members members" data-section="vein">
+  <header class="directory-header flexrow">
+    <h3 class="name">{{localize "Valombreuse5eGMG.Odyssey.Name"}}</h3>
+  </header>
+
+  <div class="vein-kingdoms-scroll">
+    <ol class="members-list directory-list">
+      {{#each odysseys as |journal|}}
+        <li class="group-member directory-item flexrow" data-actor-id="{{journal.uuid}}">
+          <input type="hidden" value="{{journal.uuid}}">
+          <div class="name flexrow">
+            <img class="thumbnail" src="/modules/valombreuse5egmg/assets/icons/Odyssey-ico.webp">
+            <h4 class="document-name"><a class="member-link">{{journal.name}}</a></h4>
+          </div>
+          <div class="timeline-field timeline-date">
+            <h4 class="timeline-field-text">{{journal.dateLabel}}</h4>
+          </div>
+
+          <div class="timeline-field timeline-region">
+            <h4 class="timeline-field-text">{{journal.region}}</h4>
+          </div>
+
+          {{!-- (facultatif) un résumé court si tu veux afficher excerpt --}}
+          <div class="timeline-field timeline-excerpt">
+            <h4 class="timeline-field-text">{{journal.excerpt}}</h4>
+          </div>
+
+          <div class="power-controls">
+            
+    <a class="action-button power-open"
+       data-action="openPower"
+       title="{{localize 'Valombreuse5eGMG.powers.open'}}">
+      <i class="fa-solid fa-book-open"></i>
+    </a>
+    <a class="action-button power-remove"
+       data-action="removePower"
+       title="{{localize 'Valombreuse5eGMG.powers.remove'}}">
+      <i class="fa-solid fa-xmark"></i>
+    </a>
+  </div>
+        </li>
+      {{else}}
+        <li class="group-member directory-item">
+          <em>{{localize "Valombreuse5eGMG.secrets.none"}}</em>
+        </li>
+      {{/each}}
+    </ol>
+  </div>
+</section>

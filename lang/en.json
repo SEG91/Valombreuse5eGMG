@@ -48,6 +48,7 @@
 
   "Valombreuse5eGMG.Odyssey.S1.Title": "1. Narrative Summary",
   "Valombreuse5eGMG.Odyssey.S1.Help": "Write a 5–10 line epic summary from the Vein’s collective perspective — describe the journey, the conflict, and its resolution.",
+  "Valombreuse5eGMG.Odyssey.S1.Hint": "Write a 5–10 line summary told from the Vein’s collective voice. Capture the tone of myth and memory — how the journey unfolded, what was lost or learned, and what echoes remain. Focus on emotion and symbols rather than simple facts.",
   
   "Valombreuse5eGMG.Odyssey.S2.Title": "2. Decisions and Consequences",
   "Valombreuse5eGMG.Odyssey.S2.Col.Decision": "Decision",
@@ -81,5 +82,23 @@
   "Valombreuse5eGMG.Odyssey.S7.Empty": "No linked entries yet.",
 
   "Valombreuse5eGMG.Odyssey.SheetLabel": "Odyssey Journal Sheet",
-  "Valombreuse5eGMG.Odyssey.NewPage": "New Odyssey Page"
+  "Valombreuse5eGMG.Odyssey.NewPage": "New Odyssey Page",
+   "Valombreuse5eGMG.Odyssey.Name": "Odyssey Name",
+  "Valombreuse5eGMG.tabs.timeline": "Odyssey of the Vein",
+    "Valombreuse5eGMG.Odysseys.TabTitle": "Odysseys",
+  "Valombreuse5eGMG.Odysseys.EditOrder": "Edit order",
+  "Valombreuse5eGMG.Odysseys.Open": "Open",
+  "Valombreuse5eGMG.Odysseys.Created": "created",
+  "Valombreuse5eGMG.Odysseys.Region": "Region",
+  "Valombreuse5eGMG.Odysseys.NoOdysseys": "No Odysseys found.",
+  "Valombreuse5eGMG.Odysseys.HintTagFlag": "Tag Journals with",
+  "Valombreuse5eGMG.Odysseys.HintOr": "or place them in the",
+  "Valombreuse5eGMG.Odysseys.HintFolder": "Odysseys of the Vein",
+  "Valombreuse5eGMG.Odysseys.HintFolderSuffix": "folder.",
+  "Valombreuse5eGMG.Odysseys.MoveUp": "Move up",
+  "Valombreuse5eGMG.Odysseys.MoveDown": "Move down",
+  "Valombreuse5eGMG.Odysseys.Order": "Order",
+  "Valombreuse5eGMG.Odysseys.Remove": "Remove",
+  "Valombreuse5eGMG.Odysseys.Added": "Odyssey attached.",
+  "Valombreuse5eGMG.Odysseys.DropHint": "GM: Drag & drop a Journal here to attach it to the Vein."
 }

@@ -1,4 +1,5 @@
 
+import { attachOdysseytoVeinUuid,collectOdysseysForRender } from "./vein-odyssey-timeline.js";
 
 
 export class ValombreuseVeinSheet extends dnd5e.applications.actor.GroupActorSheet {
@@ -51,7 +52,10 @@ export class ValombreuseVeinSheet extends dnd5e.applications.actor.GroupActorShe
         }
     }
 
-    return super.getData();
+    const data = await super.getData(options);
+    // ✅ Prépare le tableau pour le HBS
+    data.odysseys = await collectOdysseysForRender(this.actor);
+    return data;
     }   
 
     /** @override */
@@ -112,25 +116,49 @@ export class ValombreuseVeinSheet extends dnd5e.applications.actor.GroupActorShe
          if (!itemId) return;
 
       await this.actor.deleteEmbeddedDocuments("Item", [itemId]);
-});
+ 
+    });
 
-// Ouvrir la fiche d'un pouvoir (feat)
-html.on("click", ".power-open", ev => {
-  ev.preventDefault();
-  const li = ev.currentTarget.closest(".power-row");
-  const id = li?.dataset.itemId;
-  const item = this.actor?.items?.get(id);
-  if (item) item.sheet?.render(true);
-});
+    // Ouvrir la fiche d'un pouvoir (feat)
+       html.on("click", ".power-open", ev => {
+        ev.preventDefault();
+        const li = ev.currentTarget.closest(".power-row");
+        if (li) {
+            const id = li?.dataset.itemId;
+            const item = this.actor?.items?.get(id);
+            if (item) item.sheet?.render(true);
+        }
+       else {
+          const jli = ev.currentTarget.closest('li.group-member');
+          const uuid = jli?.dataset.actorId;
+          if (!uuid) return;
+          const doc = fromUuidSync(uuid);
+          if (doc) doc.sheet?.render(true);
+        }
+    });
 
-// Supprimer le pouvoir
-html.on("click", ".power-remove", async ev => {
-  ev.preventDefault();
-  const li = ev.currentTarget.closest(".power-row");
-  const id = li?.dataset.itemId;
-  if (!id) return;
-  await this.actor.deleteEmbeddedDocuments("Item", [id]);
-});
+   // Supprimer le pouvoir
+      html.on("click", ".power-remove", async ev => {
+        ev.preventDefault();
+        const Thisactor= this.actor;
+         const li = ev.currentTarget.closest(".power-row");
+        if (li)
+        {
+          const id = li?.dataset.itemId;
+          if (!id) return;
+        await this.actor.deleteEmbeddedDocuments("Item", [id]);
+       }
+     else {
+      const jli = ev.currentTarget.closest('li.group-member');
+      const uuid = jli?.dataset.actorId;
+      if (!uuid) return;
+      const list = this.actor.getFlag("Valombreuse5eGMG", "odysseys") || [];
+      const next = list.filter(u => u !== uuid);
+      await this.actor.setFlag("Valombreuse5eGMG", "odysseys", next);
+      await this.render(false);
+      ui.notifications?.info("Odyssey removed.");
+   }
+     });
 
         // Initiate a roll
         html.find('.rollable').click(ev => {
@@ -239,6 +267,9 @@ async rollToChat({
         // Case 1 - Dropped Item
         if (data.type === "Item") {
             return this._onDropItem(event, data);
+        }
+        else if (data.type === "JournalEntry") {
+            return attachOdysseytoVeinUuid(this.actor,data.uuid);
         }
         else
           return super._onDrop(event);

@@ -16,7 +16,8 @@ export const preloadHandlebarsTemplates = async function () {
         "modules/valombreuse5egmg/templates/vein-secret.hbs",
         "modules/valombreuse5egmg/templates/vein-powers.hbs",
         "modules/valombreuse5egmg/templates/vein-powers-row.hbs",
-        "modules/valombreuse5egmg/templates/odyssey-entry.hbs"
+        "modules/valombreuse5egmg/templates/odyssey-entry.hbs",
+        "modules/valombreuse5egmg/templates/vein-odyssey-timeline.hbs"
         ];
 
     // Load the template parts

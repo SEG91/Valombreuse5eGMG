@@ -1,4 +1,10 @@
 <form class="{{cssClass}}" autocomplete="off">
+  {{!-- Correctif local : n’afficher que l’onglet actif --}}
+  <style>
+    .valombreuse .sheet-body > .tab[data-tab] { display: none !important; }
+    .valombreuse .sheet-body > .tab[data-tab].active { display: block !important; }
+  </style>
+
   <div class="valombreuse wrap valombreuse-bg-std">
 
     <!-- HEADER -->
@@ -18,8 +24,8 @@
       <div class="valombreuse content flex3">
 
         {{!-- Onglets de navigation --}}
-       <nav class="sheet-tabs tabs" data-group="primary" aria-label="Navigation de fiche">
-          <a class="item titleFont" data-tab="diplomacy">  
+        <nav class="sheet-tabs tabs" data-group="primary" aria-label="Navigation de fiche">
+          <a class="item titleFont" data-tab="diplomacy">
             {{ localize "Valombreuse5eGMG.tabs.diplomacy" }}
           </a>
           <a class="item titleFont" data-tab="secrets">
@@ -28,19 +34,34 @@
           <a class="item titleFont" data-tab="powers">
             {{ localize "Valombreuse5eGMG.tabs.powers" }}
           </a>
+          <a class="item titleFont" data-tab="timeline">
+            {{ localize "Valombreuse5eGMG.tabs.timeline" }}
+          </a>
         </nav>
 
         {{!-- Corps des onglets --}}
         <section class="sheet-body">
-            <div class="tab stats" data-group="primary" data-tab="diplomacy">
-              {{> "modules/valombreuse5egmg/templates/vein-diplomacy.hbs"}}
-            </div>
-            <div class="tab secrets" data-group="primary" data-tab="secrets">
+
+          <!-- Diplomacy -->
+          <div class="tab stats" data-group="primary" data-tab="diplomacy">
+            {{> "modules/valombreuse5egmg/templates/vein-diplomacy.hbs"}}
+          </div>
+
+          <!-- Secrets -->
+          <div class="tab secrets" data-group="primary" data-tab="secrets">
             {{> "modules/valombreuse5egmg/templates/vein-secret.hbs"}}
-            </div>
-            <div class="tab powers" data-group="primary" data-tab="powers">
-              {{> "modules/valombreuse5egmg/templates/vein-powers.hbs"}}
-            </div>
+          </div>
+
+          <!-- Powers -->
+          <div class="tab powers" data-group="primary" data-tab="powers">
+            {{> "modules/valombreuse5egmg/templates/vein-powers.hbs"}}
+          </div>
+
+          <!-- Odyssey Timeline -->
+          <div class="tab timeline" data-group="primary" data-tab="timeline">
+            {{> "modules/valombreuse5egmg/templates/vein-odyssey-timeline.hbs"}}
+          </div>
+
         </section>
       </div>
     </div>

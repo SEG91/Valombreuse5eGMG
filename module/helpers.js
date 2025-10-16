@@ -1,6 +1,8 @@
 
 export const VE_MODULE_NAME = 'Valombreuse5eGMG';
 
+
+
 export const registerHandlebarsHelpers = function () {
 
 
@@ -148,6 +150,8 @@ Handlebars.registerHelper("seuilsWithPowers", function (actor) {
   // uniques + triés
   return [...new Set(arr)].sort((a, b) => a - b);
 });
+
+
 
 // Powers d’un seuil donné
 Handlebars.registerHelper("getVeinPowersBySeuil", function (actor, seuil) {
