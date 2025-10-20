@@ -63,6 +63,19 @@
       },
       "flags": {},
       "banner": "modules/Valombreuse5eGMG/assets/images/coverGMG.png"
+    },
+    {
+      "label": "Vein Powers",
+      "type": "Item",
+      "name": "vein-powers",
+      "path": "packs/vein-powers",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {},
+      "banner": "modules/Valombreuse5eGMG/assets/images/coverGMG.png"
     }
   ],
     "languages": [
