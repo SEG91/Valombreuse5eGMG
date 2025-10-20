@@ -1,0 +1,39 @@
+<form class="{{cssClass}}" autocomplete="off">
+ 
+  <nav class="sheet-navigation tabs" data-group="primary">
+        <a class="item active" data-tab="members">{{localize 'DND5E.Group.Member.other'}}</a>
+        <a class="item titleFont" data-tab="diplomacy">{{ localize "Valombreuse5eGMG.tabs.diplomacy" }}</a>
+        <a class="item titleFont" data-tab="secrets">{{ localize "Valombreuse5eGMG.tabs.secrets" }}</a>
+        <a class="item titleFont" data-tab="powers">{{ localize "Valombreuse5eGMG.tabs.powers" }}</a>
+        <a class="item titleFont" data-tab="timeline">{{ localize "Valombreuse5eGMG.tabs.timeline" }}</a>
+    </nav>
+
+    <section class="sheet-body">
+        <div class="tab members" data-group="primary" data-tab="members">
+            {{> "dnd5e.group-members"}}
+        </div>
+
+        <div class="tab inventory flexcol" data-group="primary" data-tab="diplomacy">
+             {{> "modules/valombreuse5egmg/templates/vein-diplomacy.hbs"}}
+        </div>
+
+        <div class="tab inventory flexcol" data-group="primary" data-tab="secrets">
+             {{> "modules/valombreuse5egmg/templates/vein-secret.hbs"}}
+        </div>
+
+        <div class="tab inventory flexcol" data-group="primary" data-tab="powers">
+             {{> "modules/valombreuse5egmg/templates/vein-powers.hbs"}}
+        </div>
+
+        <div class="tab inventory flexcol" data-group="primary" data-tab="timeline">
+             {{> "modules/valombreuse5egmg/templates/vein-odyssey-timeline.hbs"}}
+        </div>
+
+
+        <div class="tab description" data-group="primary" data-tab="description">
+            {{editor descriptionFull target="system.description.full" button=true editable=editable
+                     engine="prosemirror" collaborate=false}}
+        </div>
+
+    </section>
+</form>

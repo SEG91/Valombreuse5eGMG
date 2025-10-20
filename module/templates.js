@@ -9,6 +9,7 @@ export const preloadHandlebarsTemplates = async function () {
     const templatePaths = [
         // ACTOR
         "modules/valombreuse5egmg/templates/vein-sheet.hbs",
+        "modules/valombreuse5egmg/templates/vein-sheetv2.hbs",
         "modules/valombreuse5egmg/templates/vein-header.hbs",
         "modules/valombreuse5egmg/templates/vein-members.hbs",
         "modules/valombreuse5egmg/templates/vein-diplomacy.hbs",

@@ -30,18 +30,7 @@ game.dnd5e.config.lootTypes.secretbloodline = { label: game.i18n.format(VE_MODUL
 game.dnd5e.config.lootTypes.secretorder = { label: game.i18n.format(VE_MODULE_NAME + ".secretorder")};
 game.dnd5e.config.lootTypes.secretgenesis = { label: game.i18n.format(VE_MODULE_NAME + ".secretgenesis")};
 
-    // Register actor sheets
-  Actors.registerSheet("dnd5e", ValombreuseVeinSheet, {
-    types: ["group"], 
-    makeDefault: true,
-    label: "Valombreuse5eGMG.SheetClassGroup"
- });
-
- DocumentSheetConfig.registerSheet(Item, "dnd5e", ValombreuseSecretSheet, {
-    makeDefault: true,
-    types: ["loot"],
-    label: "Valombreuse5eGMG.SheetClassSecret"
-  });
+   
 
 
  
@@ -63,6 +52,19 @@ Hooks.once("setup", () => {
 
 Hooks.once("i18nInit", async function () {
     console.info("ValombreuseGMG : i18nInit check...");
+
+     // Register actor sheets
+  Actors.registerSheet("dnd5e", ValombreuseVeinSheet, {
+    types: ["group"], 
+    makeDefault: true,
+    label: "Valombreuse5eGMG.SheetClassGroup"
+ });
+
+ foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, "dnd5e", ValombreuseSecretSheet, {
+    makeDefault: true,
+    types: ["loot"],
+    label: "Valombreuse5eGMG.SheetClassSecret"
+  });
 
     foundry.applications.apps.DocumentSheetConfig.registerSheet(JournalEntry, "Valombreuse5eGMG", OdysseyEntrySheet, {
         canBeDefault: false, 

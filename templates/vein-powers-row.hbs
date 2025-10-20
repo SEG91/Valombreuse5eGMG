@@ -1,7 +1,10 @@
-{{!-- Renders a single power row --}}
-<li class="power-row flexrow" data-item-id="{{power.id}}">
-  <div class="power-name">
-    <a class="power-link"
+{{!-- =============================== --}}
+{{!--  Single Power Row (V2 actions) --}}
+{{!-- =============================== --}}
+<li class="vp-row flexrow" data-item-id="{{power.id}}">
+  <div class="vp-name">
+    <a class="vp-link"
+       data-action="powerOpen"
        data-item-id="{{power.id}}"
        data-tooltip-direction="UP"
        data-tooltip="{{{stripHTML power.system.description.value}}}"
@@ -10,15 +13,10 @@
     </a>
   </div>
 
-  <div class="power-controls">
-    <a class="action-button power-open"
-       data-action="openPower"
-       title="{{localize 'Valombreuse5eGMG.powers.open'}}">
-      <i class="fa-solid fa-book-open"></i>
-    </a>
-    <a class="action-button power-remove"
-       data-action="removePower"
-       title="{{localize 'Valombreuse5eGMG.powers.remove'}}">
+  <div class="secret-controls">
+    <a class="action-button secret-remove"
+       data-action="powerRemove"
+       title="{{localize 'Valombreuse5eGMG.secrets.remove'}}">
       <i class="fa-solid fa-xmark"></i>
     </a>
   </div>

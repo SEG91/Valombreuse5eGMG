@@ -1,49 +1,62 @@
-<section class="directory vein-members members" data-section="vein">
-  <header class="directory-header flexrow">
-    <h3 class="name">{{localize "Valombreuse5eGMG.Odyssey.Name"}}</h3>
-  </header>
+{{!-- =============================== --}}
+{{!--   VEIN — ODYSSEY TIMELINE (V2) --}}
+{{!-- =============================== --}}
 
-  <div class="vein-kingdoms-scroll">
-    <ol class="members-list directory-list">
-      {{#each odysseys as |journal|}}
-        <li class="group-member directory-item flexrow" data-actor-id="{{journal.uuid}}">
-          <input type="hidden" value="{{journal.uuid}}">
-          <div class="name flexrow">
-            <img class="thumbnail" src="/modules/valombreuse5egmg/assets/icons/Odyssey-ico.webp">
-            <h4 class="document-name"><a class="member-link">{{journal.name}}</a></h4>
-          </div>
-          <div class="timeline-field timeline-date">
-            <h4 class="timeline-field-text">{{journal.dateLabel}}</h4>
-          </div>
+{{#with (lookup tabs "timeline") as |tab|}}
+<section class="tab {{tab.cssClass}}" data-tab="{{tab.id}}" data-group="{{tab.group}}">
 
-          <div class="timeline-field timeline-region">
-            <h4 class="timeline-field-text">{{journal.region}}</h4>
-          </div>
+  <section class="odyssey-tab directory members" data-section="odyssey">
+    <header class="odyssey-header flexrow">
+      <div class="col-name">{{ localize "Valombreuse5eGMG.Odyssey.Name" }}</div>
+      <div class="col-region">{{ localize "Valombreuse5eGMG.Odyssey.Region" }}</div>
+      <div class="col-date">{{ localize "Valombreuse5eGMG.Odyssey.Date" }}</div>
+      <div class="col-excerpt">{{ localize "Valombreuse5eGMG.Odyssey.Excerpt" }}</div>
+      <div class="col-controls">&nbsp;</div>
+    </header>
 
-          {{!-- (facultatif) un résumé court si tu veux afficher excerpt --}}
-          <div class="timeline-field timeline-excerpt">
-            <h4 class="timeline-field-text">{{journal.excerpt}}</h4>
-          </div>
+    <div class="odyssey-scroll">
+      <ol class="odyssey-list directory-list">
+        {{#each @root.valombreuse.odysseys as |od|}}
+          <li class="ody-row flexrow" data-uuid="{{od.uuid}}" data-order="{{od.order}}">
 
-          <div class="power-controls">
-            
-    <a class="action-button power-open"
-       data-action="openPower"
-       title="{{localize 'Valombreuse5eGMG.powers.open'}}">
-      <i class="fa-solid fa-book-open"></i>
-    </a>
-    <a class="action-button power-remove"
-       data-action="removePower"
-       title="{{localize 'Valombreuse5eGMG.powers.remove'}}">
-      <i class="fa-solid fa-xmark"></i>
-    </a>
-  </div>
-        </li>
-      {{else}}
-        <li class="group-member directory-item">
-          <em>{{localize "Valombreuse5eGMG.secrets.none"}}</em>
-        </li>
-      {{/each}}
-    </ol>
-  </div>
+            <div class="col-name flexrow">
+              <a class="secret-link"
+                 data-action="odysseyOpen"
+                 data-uuid="{{od.uuid}}"
+                 title="{{od.name}}">
+                {{od.name}}
+              </a>
+            </div>
+
+            <div class="col-region">
+              <span class="ody-pill">{{od.region}}</span>
+            </div>
+
+            <div class="col-date">
+              <span class="ody-date">{{od.dateLabel}}</span>
+            </div>
+
+            <div class="col-excerpt">
+              <span class="ody-excerpt">{{od.excerpt}}</span>
+            </div>
+
+            <div class="col-controls secret-controls">
+              <a class="action-button secret-remove"
+                 data-action="odysseyRemove"
+                 data-uuid="{{od.uuid}}"
+                 title="{{ localize 'Valombreuse5eGMG.secrets.remove' }}">
+                <i class="fa-solid fa-xmark"></i>
+              </a>
+            </div>
+          </li>
+        {{else}}
+          <li class="ody-row ody-empty">
+            <em>{{ localize "Valombreuse5eGMG.Odysseys.NoOdysseys" }}</em>
+          </li>
+        {{/each}}
+      </ol>
+    </div>
+  </section>
+
 </section>
+{{/with}}

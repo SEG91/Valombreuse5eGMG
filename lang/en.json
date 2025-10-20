@@ -38,9 +38,10 @@
 
   "Valombreuse5eGMG.Odyssey.Header.Title": "Odyssey Title",
   "Valombreuse5eGMG.Odyssey.Header.TitlePH": "e.g. Odyssey XIII — The Ruins of Karthos",
-  "Valombreuse5eGMG.Odyssey.Header.Date": "Date (Céphéus Calendar)",
+  "Valombreuse5eGMG.Odyssey.Date": "Date (Céphéus Calendar)",
   "Valombreuse5eGMG.Odyssey.Header.DatePH": "Spring 11941, 3rd Moon of Ashes",
-  "Valombreuse5eGMG.Odyssey.Header.Region": "Region Explored",
+  "Valombreuse5eGMG.Odyssey.Region": "Region Explored",
+  "Valombreuse5eGMG.Odyssey.Excerpt": "Odyssey Excerpt",
   "Valombreuse5eGMG.Odyssey.Header.RegionPH": "Framentor Peaks, Grinardie Plains, etc.",
   "Valombreuse5eGMG.Odyssey.Header.GM": "Game Master",
   "Valombreuse5eGMG.Odyssey.Header.GMPH": "Optional",
@@ -100,5 +101,7 @@
   "Valombreuse5eGMG.Odysseys.Order": "Order",
   "Valombreuse5eGMG.Odysseys.Remove": "Remove",
   "Valombreuse5eGMG.Odysseys.Added": "Odyssey attached.",
-  "Valombreuse5eGMG.Odysseys.DropHint": "GM: Drag & drop a Journal here to attach it to the Vein."
+  "Valombreuse5eGMG.Odysseys.DropHint": "GM: Drag & drop a Journal here to attach it to the Vein.",
+   "Valombreuse5eGMG.secrets.hintDrag": "Grasp a secret and let it flow… the blood never forgets.",
+  "Valombreuse5eGMG.secrets.hintDrop": "Release it here, where the Vein remembers its whispers."
 }

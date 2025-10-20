@@ -51,9 +51,9 @@ export async function collectOdysseysForRender(actor) {
       id: j.id,
       uuid: j.uuid,
       name: j.name,
-      dateLabel: j.getFlag(VO_FLAG_SCOPE, "date") || "",
-      region:  j.getFlag(VO_FLAG_SCOPE, "region") || "",
-      excerpt: j.getFlag(VO_FLAG_SCOPE, "excerpt") || "",
+      dateLabel: j.getFlag(VO_FLAG_SCOPE, "odyssey.header.date") || "",
+      region:  j.getFlag(VO_FLAG_SCOPE, "odyssey.header.region") || "",
+      excerpt: j.getFlag(VO_FLAG_SCOPE, "odyssey.excerpt") || "",
       order:   i + 1
     });
   }

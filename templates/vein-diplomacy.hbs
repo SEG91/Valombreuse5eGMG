@@ -1,57 +1,65 @@
 {{!-- =============================== --}}
-{{!--   VEIN MEMBERS (under header)  --}}
+{{!--   VEIN — DIPLOMACY (as a TAB)   --}}
 {{!-- =============================== --}}
 
+<section class="tab {{ tab.cssClass }}" data-tab="{{ tab.id }}" data-group="{{ tab.group }}">
 
-<section class="directory vein-members members" data-section="vein">
-  <header class="directory-header flexrow">
-    <h3 class="name">{{localize "Valombreuse5eGMG.vein.kingdom"}}</h3>
-    <span class="hp">{{localize "Valombreuse5eGMG.vein.diplomacy"}}</span>
-    <span class="knowledge">{{localize "Valombreuse5eGMG.vein.knowledge"}}</span>
-  </header>
-   {{!-- Wrapper scrollable --}}
-  <div class="vein-kingdoms-scroll">
-  <ol class="members-list directory-list">
-    {{#each (getVeinKingdoms actor) as |member|}}
-    <li class="group-member directory-item flexrow" data-actor-id="{{member.id}}">
-      <input type="hidden" value="{{member.id}}">
-      <div class="name flexrow">
-        <img class="thumbnail" src="{{member.img}}">
-        <h4 class="document-name"><a class="member-link">{{member.name}}</a></h4>
-      </div>
+  <section class="directory vein-members members" data-section="vein">
+    <header class="directory-header flexrow">
+      <h3 class="name">{{localize "Valombreuse5eGMG.vein.kingdom"}}</h3>
+      <span class="hp">{{localize "Valombreuse5eGMG.vein.diplomacy"}}</span>
+      <span class="knowledge">{{localize "Valombreuse5eGMG.vein.knowledge"}}</span>
+    </header>
 
-      <div class="hp flexrow">
-        <div class="bar-container">
-          <div class="bar"
-               style="width: calc({{member.system.progress.value}} / {{member.system.progress.max}} * 100%);">
-          </div>
-        </div>
-        <span class="current">
-        <input class="field-value vein-kingdom-progress"
-                 type="number"
-                 value="{{member.system.progress.value}}"
-                 data-dtype="number"
-                 placeholder="0"/></span>
-        <span class="sep">/</span>
-        <span class="max">{{member.system.progress.max}}</span>
-      </div>
+    <div class="vein-kingdoms-scroll">
+      <ol class="members-list directory-list">
+        {{#each (getVeinKingdoms actor) as |member|}}
+          <li class="group-member directory-item flexrow" data-actor-id="{{member.id}}">
+            <input type="hidden" value="{{member.id}}">
 
-      <div class="controls">
-        <input class="field-value vein-knowledge-input"
-                 type="number"
-                 value="{{member.system.uses.spent}}"
-                 data-dtype="number"
-                 placeholder="0"/>
-        
-      </div>
-      <div class="controls">
-      <a class="rollable" data-roll-type="rollKnowledge" data-rolling-title="{{member.name}}" data-rolling-value="{{member.system.uses.spent}}">
-        <img src="/modules/valombreuse5egmg/assets/icons/Dice.webp" alt="Roll" class="icon-dice">
-      </a>
-      </div>
-    </li>
-    {{/each}}
-  </ol>
-  </div>
+            <div class="name flexrow">
+              <img class="thumbnail" src="{{member.img}}" alt="{{member.name}}">
+              <h4 class="document-name">
+                <a class="member-link">{{member.name}}</a>
+              </h4>
+            </div>
+
+            <div class="hp flexrow">
+              <div class="bar-container">
+                <div class="bar"
+                     style="width: calc({{member.system.progress.value}} / {{member.system.progress.max}} * 100%);">
+                </div>
+              </div>
+              <span class="current">
+                <input class="field-value vein-kingdom-progress"
+                       type="number"
+                       value="{{member.system.progress.value}}"
+                       data-dtype="number"
+                       placeholder="0"/>
+              </span>
+              <span class="sep">/</span>
+              <span class="max">{{member.system.progress.max}}</span>
+            </div>
+
+            <div class="controls">
+              <input class="field-value vein-knowledge-input"
+                     type="number"
+                     value="{{member.system.uses.spent}}"
+                     data-dtype="number"
+                     placeholder="0"/>
+            </div>
+
+            <div class="controls">
+              {{!-- your roll button --}}
+<a class="rollable" data-action="rollKnowledge" data-roll-type="rollKnowledge"
+   data-rolling-title="{{member.name}}" data-rolling-value="{{member.system.uses.spent}}">
+  <img src="/modules/valombreuse5egmg/assets/icons/Dice.webp" alt="Roll" class="icon-dice">
+</a>
+            </div>
+          </li>
+        {{/each}}
+      </ol>
+    </div>
+  </section>
+
 </section>
-
