@@ -2978,7 +2978,7 @@
   box-shadow: none;
 
   /* Fond : pas de répétition, crop si plus petit, scale si plus grand */
-  background-image: url("/modules/valombreuse5egmg/assets/images/Valombreuse-cover.webp");
+  background-image: url("/modules/Valombreuse5eGMG/assets/images/Valombreuse-cover.webp");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;        /* => crop / stretch (sans déformation) */
@@ -2996,7 +2996,7 @@
   border: none;
   box-shadow: none;
 
-  background-image: url("/modules/valombreuse5egmg/assets/images/coverGMG.png");
+  background-image: url("/modules/Valombreuse5eGMG/assets/images/coverGMG.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;        /* => crop / stretch (sans déformation) */
@@ -3358,7 +3358,7 @@
 }
 
 .valombreuse.wrap.valombreuse-bg-std {
-  background: url("/modules/valombreuse5egmg/assets/images/BG-Page-Web-scaled.jpg")
+  background: url("/modules/Valombreuse5eGMG/assets/images/BG-Page-Web-scaled.jpg")
               center / cover no-repeat fixed;
 }
 /* Conteneur visuel de la zone "secret" */

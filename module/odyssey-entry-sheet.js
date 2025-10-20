@@ -18,7 +18,7 @@ export class OdysseyEntrySheet extends foundry.appv1.sheets.JournalSheet {
   }
 
   get template() {
-    return "modules/valombreuse5egmg/templates/odyssey-entry.hbs";
+    return "modules/Valombreuse5eGMG/templates/odyssey-entry.hbs";
   }
 
   async getData(options = {}) {

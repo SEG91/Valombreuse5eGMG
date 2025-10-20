@@ -62,7 +62,7 @@ export class ValombreuseSecretSheet extends dnd5e.applications.item.ItemSheet5e 
     get template() {
       const itype=this.item.type;
       if (itype === 'loot') {
-        return `modules/valombreuse5egmg/templates/secret-sheet.hbs`;
+        return `modules/Valombreuse5eGMG/templates/secret-sheet.hbs`;
       }
       else
         return `systems/dnd5e/templates/items/${this.item.type}.hbs`;

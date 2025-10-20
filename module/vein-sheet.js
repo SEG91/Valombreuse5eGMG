@@ -37,25 +37,25 @@ export class ValombreuseVeinSheet extends dnd5e.applications.actor.GroupActorShe
     },
     diplomacy: {
       container: { classes: ["tab-body"], id: "tabs" },
-      template: "modules/valombreuse5egmg/templates/vein-diplomacy.hbs",
+      template: "modules/Valombreuse5eGMG/templates/vein-diplomacy.hbs",
       // (optionnel) permet un scroll interne si besoin
       scrollable: [""]
     },
     secrets: {
       container: { classes: ["tab-body"], id: "tabs" },
-      template: "modules/valombreuse5egmg/templates/vein-secret.hbs",
+      template: "modules/Valombreuse5eGMG/templates/vein-secret.hbs",
       // (optionnel) permet un scroll interne si besoin
       scrollable: [""]
     },
      powers: {
       container: { classes: ["tab-body"], id: "tabs" },
-      template: "modules/valombreuse5egmg/templates/vein-powers.hbs",
+      template: "modules/Valombreuse5eGMG/templates/vein-powers.hbs",
       // (optionnel) permet un scroll interne si besoin
       scrollable: [""]
     },
      timeline: {
       container: { classes: ["tab-body"], id: "tabs" },
-      template: "modules/valombreuse5egmg/templates/vein-odyssey-timeline.hbs",
+      template: "modules/Valombreuse5eGMG/templates/vein-odyssey-timeline.hbs",
       // (optionnel) permet un scroll interne si besoin
       scrollable: [""]
     },
@@ -76,10 +76,10 @@ export class ValombreuseVeinSheet extends dnd5e.applications.actor.GroupActorShe
   /** @override */
   static TABS = [
     { tab: "members", label: "DND5E.Group.Member.other", icon: "fa-solid fa-users"},
-    { tab: "diplomacy", label: "Valombreuse5eGMG.tabs.diplomacy", svg: "modules/valombreuse5egmg/assets/icons/svg/simplediplomacy.svg" },
-    { tab: "secrets", label: "Valombreuse5eGMG.tabs.secrets", svg: "modules/valombreuse5egmg/assets/icons/svg/book.svg" },
-    { tab: "powers", label: "Valombreuse5eGMG.tabs.powers", svg: "modules/valombreuse5egmg/assets/icons/svg/magic.svg" },
-    { tab: "timeline", label: "Valombreuse5eGMG.tabs.timeline", svg: "modules/valombreuse5egmg/assets/icons/svg/scroll-unfurled.svg" },
+    { tab: "diplomacy", label: "Valombreuse5eGMG.tabs.diplomacy", svg: "modules/Valombreuse5eGMG/assets/icons/svg/simplediplomacy.svg" },
+    { tab: "secrets", label: "Valombreuse5eGMG.tabs.secrets", svg: "modules/Valombreuse5eGMG/assets/icons/svg/book.svg" },
+    { tab: "powers", label: "Valombreuse5eGMG.tabs.powers", svg: "modules/Valombreuse5eGMG/assets/icons/svg/magic.svg" },
+    { tab: "timeline", label: "Valombreuse5eGMG.tabs.timeline", svg: "modules/Valombreuse5eGMG/assets/icons/svg/scroll-unfurled.svg" },
     { tab: "biography", label: "DND5E.Biography", icon: "fa-solid fa-feather" }
   ];
 

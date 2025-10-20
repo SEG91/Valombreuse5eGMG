@@ -16,7 +16,7 @@
 
         <ol class="vp-list">
           {{#each (getVeinPowersBySeuil @root.actor seuil) as |power|}}
-            {{> "modules/valombreuse5egmg/templates/vein-powers-row.hbs" power=power}}
+            {{> "modules/Valombreuse5eGMG/templates/vein-powers-row.hbs" power=power}}
           {{else}}
             <li class="vp-row vp-row--empty">
               {{localize "Valombreuse5eGMG.powers.none"}}
