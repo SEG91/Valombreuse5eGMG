@@ -1,7 +1,5 @@
-2025/10/20-21:24:34.061008 30e298000 Recovering log #2190
-2025/10/20-21:24:34.061803 30e298000 Delete type=3 #2188
-2025/10/20-21:24:34.061886 30e298000 Delete type=0 #2190
-2025/10/20-21:32:27.470299 308a17000 Level-0 table #2195: started
-2025/10/20-21:32:27.470351 308a17000 Level-0 table #2195: 0 bytes OK
-2025/10/20-21:32:27.470676 308a17000 Delete type=0 #2193
-2025/10/20-21:32:27.471611 308a17000 Manual compaction at level-0 from '!folders!gC6sHfvbWdDyAd8W' @ 72057594037927935 : 1 .. '!journal.pages!lhMfr7q22rlWr7LY.y5K5TrmsTMfGuUmd' @ 0 : 0; will stop at (end)
+2025/10/20-22:30:16.426 2e98c Log #2197: 0 ops saved to Table #2198 OK
+2025/10/20-22:30:16.427 2e98c Archiving E:\nosave\FoundryVTT\Data\modules\Valombreuse5eGMG\packs\gamemaster-rules/002197.log: OK
+2025/10/20-22:30:16.428 2e98c Table #37: 5 entries OK
+2025/10/20-22:30:16.437 2e98c Archiving E:\nosave\FoundryVTT\Data\modules\Valombreuse5eGMG\packs\gamemaster-rules/MANIFEST-002196: OK
+2025/10/20-22:30:16.446 2e98c **** Repaired leveldb E:\nosave\FoundryVTT\Data\modules\Valombreuse5eGMG\packs\gamemaster-rules; recovered 1 files; 24335 bytes. Some data may have been lost. ****
