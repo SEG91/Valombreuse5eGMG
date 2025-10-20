@@ -33,8 +33,6 @@ game.dnd5e.config.lootTypes.secretgenesis = { label: game.i18n.format(VE_MODULE_
    
 
 
- 
-
  await preloadHandlebarsTemplates();
   registerHandlebarsHelpers();
   installOdysseyJournalButton();
@@ -60,7 +58,7 @@ Hooks.once("i18nInit", async function () {
     label: "Valombreuse5eGMG.SheetClassGroup"
  });
 
- foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, "dnd5e", ValombreuseSecretSheet, {
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, "dnd5e", ValombreuseSecretSheet, {
     makeDefault: true,
     types: ["loot"],
     label: "Valombreuse5eGMG.SheetClassSecret"

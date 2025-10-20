@@ -4234,3 +4234,33 @@
 .odyssey-tab .ody-controls { flex: 0 0 auto; display: flex; gap: 6px; justify-content: flex-end; }
 .odyssey-tab .ody-thumb { width: 28px; height: 28px; border-radius: 6px; object-fit: cover; }
 .odyssey-tab .ody-pill { background: rgba(0,0,0,.08); border-radius: 999px; padding: 2px 8px; }
+
+.dnd5e2.sheet.item .sheet-header .card .value input {
+  text-align: center;
+  font-size: var(--font-size-20);
+  font-weight: 700;
+}
+/* Optionnel doré (si tu veux forcer la couleur) */
+.dnd5e2.sheet.item .sheet-header .card .value input {
+  color: #d4af37;
+}
+
+.dnd5e2 .sheet-header .secret-level-wrapper .secret-level-value {
+  display: inline-block;
+  min-width: 36px;
+  padding: 2px 8px;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: 700;
+  color: #3a2a00;
+  background: linear-gradient(180deg, #f4d58d 0%, #d4aa36 100%);
+  box-shadow: inset 0 0 0 1px rgba(90,70,10,.35);
+}
+
+.dnd5e2 .sheet-header .secret-level-wrapper .secret-level-input {
+  width: 64px;
+  text-align: center;
+  font-weight: 700;
+  background: var(--dnd5e-background-5);
+  border-radius: 6px;
+}
