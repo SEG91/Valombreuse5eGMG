@@ -54,7 +54,7 @@ Hooks.once("i18nInit", async function () {
     console.info("ValombreuseGMG : i18nInit check...");
 
      // Register actor sheets
-  Actors.registerSheet("dnd5e", ValombreuseVeinSheet, {
+  foundry.documents.collections.Actors.registerSheet("dnd5e", ValombreuseVeinSheet, {
     types: ["group"], 
     makeDefault: true,
     label: "Valombreuse5eGMG.SheetClassGroup"
