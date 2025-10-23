@@ -9,7 +9,7 @@
       "flags": {}
     }
   ],
-  "version": "0.1.0",
+  "version": "0.2.0",
   "compatibility": {
     "minimum": "13",
     "verified": "13.346"
@@ -74,6 +74,62 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
+      "flags": {},
+      "banner": "modules/Valombreuse5eGMG/assets/images/coverGMG.png"
+    },
+    {
+      "label": "NPCs",
+      "type": "Actor",
+      "name": "pnj-valombreuse",
+      "path": "packs/pnj-valombreuse.db",
+      "system": "dnd5e",
+      "private": false,
+      "flags": {},
+      "banner": "modules/Valombreuse5eGMG/assets/images/coverGMG.png"
+    },
+    {
+      "label": "GM Items & Handouts",
+      "type": "Item",
+      "name": "gm-items-and-handouts",
+      "path": "packs/gm-items-and-handouts",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {},
+      "banner": "modules/Valombreuse5eGMG/assets/images/coverGMG.png"
+    },
+    {
+      "name": "pretires-valombreuse",
+      "system": "dnd5e",
+      "label": "Premade Characters",
+      "path": "packs/pretires-valombreuse.db",
+      "type": "Actor",
+      "private": false,
+      "flags": {},
+      "banner": "modules/Valombreuse5eGMG/assets/images/coverGMG.png"
+    },
+     {
+      "label": "Adventures in Céphéus",
+      "type": "Adventure",
+      "name": "adventures-in-cepheus",
+      "path": "packs/adventures-in-cepheus",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {},
+      "banner": "modules/Valombreuse5eGMG/assets/images/coverGMG.png"
+    },
+     {
+      "label": "Scenes",
+      "type": "Scene",
+      "name": "scene--in-sole-veritas",
+      "path": "packs/scene--in-sole-veritas.db",
+      "system": "dnd5e",
+      "private": false,
       "flags": {},
       "banner": "modules/Valombreuse5eGMG/assets/images/coverGMG.png"
     }
