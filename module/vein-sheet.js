@@ -94,76 +94,61 @@ export class ValombreuseVeinSheet extends dnd5e.applications.actor.GroupActorShe
     
 
 /** @inheritDoc */
-async _prepareContext(options) {
-  const context = await super._prepareContext(options);
+  async _prepareContext(options) {
+    const context = await super._prepareContext(options);
 
-  // Compute once per render, avoid HBS helpers needing actor
-  const veinLevel  = this.#computeVeinLevel(this.actor);
-  const awakening  = this.#computeAwakening(this.actor);
+    // Flags
+    const awakeningLoss = Number(this.actor.getFlag("Valombreuse5eGMG", "awakeningLoss") ?? 0);
 
-  // Namespaced payload for templates
-  context.valombreuse ??= {};
-  context.valombreuse.veinLevel = veinLevel;
-  context.valombreuse.awakening = awakening;
-  context.valombreuse.odysseys = await collectOdysseysForRender(this.actor);
+    // Calculs: base awakening (somme des secrets), net awakening (base - perte), level
+    const baseAwakening = this.#computeBaseAwakening(this.actor);
+    const awakening     = Math.max(0, baseAwakening - awakeningLoss);
+    const veinLevel     = this.#computeVeinLevelFromAwakening(awakening);
 
-  return context;
-}
+    // Payload HBS
+    context.valombreuse ??= {};
+    context.valombreuse.awakeningBase = baseAwakening;
+    context.valombreuse.awakeningLoss = awakeningLoss;
+    context.valombreuse.awakening     = awakening;
+    context.valombreuse.veinLevel     = veinLevel;
+    context.valombreuse.odysseys      = await collectOdysseysForRender(this.actor);
 
-
-/** @param {Actor} actor */
-#computeVeinLevel(actor) {
-  if (!actor) return 0;
-
-  // Récupère la valeur d’Awakening (comme ton helper getAwakening)
-  const awakening =   this.#computeAwakening(this.actor);
-
-  // Table des seuils (niveau → éveil requis)
-  const thresholds = [
-    { level: 1, req: 5 },
-    { level: 2, req: 12 },
-    { level: 3, req: 20 },
-    { level: 4, req: 30 },
-    { level: 5, req: 45 },
-    { level: 6, req: 60 },
-    { level: 7, req: 80 },
-    { level: 8, req: 100 },
-    { level: 9, req: 125 },
-    { level: 10, req: 150 },
-    { level: 11, req: 170 },
-    { level: 12, req: 190 },
-    { level: 13, req: 210 },
-    { level: 14, req: 235 },
-    { level: 15, req: 260 },
-    { level: 16, req: 290 },
-    { level: 17, req: 320 },
-    { level: 18, req: 350 },
-    { level: 19, req: 380 },
-    { level: 20, req: 420 }
-  ];
-
-  // Cherche le plus haut niveau atteint selon l’Awakening
-  let level = 0;
-  for (const t of thresholds) {
-    if (awakening >= t.req) level = t.level;
+    return context;
   }
 
-  return level;
-}
+/** Somme l’Awakening provenant des secrets/items (base, sans pénalité) */
+  #computeBaseAwakening(actor) {
+    if (!actor) return 0;
+    let total = 0;
+    const items = actor.items?.filter(i => i.type === "loot") ?? [];
+    for (const it of items) total += Number(it.system?.quantity ?? 0);
+    return total;
+  }
 
-/** @param {Actor} actor */
-#computeAwakening(actor) {
-  if (!actor) return 0;
+  /** Calcule le niveau depuis une valeur d’Awakening fournie (déjà pénalisée) */
+  #computeVeinLevelFromAwakening(awakening) {
+    const thresholds = [
+      { level: 1, req: 5 },   { level: 2, req: 12 },  { level: 3, req: 20 },
+      { level: 4, req: 30 },  { level: 5, req: 45 },  { level: 6, req: 60 },
+      { level: 7, req: 80 },  { level: 8, req: 100 }, { level: 9, req: 125 },
+      { level: 10, req: 150 },{ level: 11, req: 170 },{ level: 12, req: 190 },
+      { level: 13, req: 210 },{ level: 14, req: 235 },{ level: 15, req: 260 },
+      { level: 16, req: 290 },{ level: 17, req: 320 },{ level: 18, req: 350 },
+      { level: 19, req: 380 },{ level: 20, req: 420 }
+    ];
+    let level = 0;
+    for (const t of thresholds) if (awakening >= t.req) level = t.level;
+    return level;
+  }
 
-   let numawg = 0;
-        
-        const items = actor.items?.filter(i => i.type === "loot") ;
-        for (let i=0;i<items.length;i++)
-        {
-            numawg=numawg+items[i].system.quantity;
-        }
-        return numawg;
-}
+  /** Compat éventuellement appelée par d’autres bouts (retourne Awakening net) */
+  #computeAwakening(actor) {
+    if (!actor) return 0;
+    const base = this.#computeBaseAwakening(actor);
+    const loss = Number(actor.getFlag("Valombreuse5eGMG", "awakeningLoss") ?? 0);
+    return Math.max(0, base - loss);
+  }
+
 
     /** @override */
     async getData(options) {
@@ -246,6 +231,16 @@ async _prepareContext(options) {
         if (!itemId) return;
         const value = Number(target.value) || 0;
         await this.actor.updateEmbeddedDocuments("Item", [{ _id: itemId, "system.uses.spent": value }]);
+        return;
+      }
+
+      // ===== Awakening Loss (nouvelle carte) =====
+      if (target.matches(".vein-awakening-loss-input")) {
+        ev.preventDefault();
+        const value = Number(target.value) || 0;
+        await this.actor.setFlag("Valombreuse5eGMG", "awakeningLoss", value);
+        // re-render pour rafraîchir cartes (awakening & level)
+        this.render(false);
         return;
       }
     };

@@ -1,6 +1,14 @@
-2025/10/20-22:30:16.479 2e8c8 Log #1882: 8 ops saved to Table #1883 OK
-2025/10/20-22:30:16.480 2e8c8 Archiving E:\nosave\FoundryVTT\Data\modules\Valombreuse5eGMG\packs\gamemaster-feats/001882.log: OK
-2025/10/20-22:30:16.480 2e8c8 Table #128: 14 entries OK
-2025/10/20-22:30:16.480 2e8c8 Table #1883: 8 entries OK
-2025/10/20-22:30:16.489 2e8c8 Archiving E:\nosave\FoundryVTT\Data\modules\Valombreuse5eGMG\packs\gamemaster-feats/MANIFEST-001881: OK
-2025/10/20-22:30:16.500 2e8c8 **** Repaired leveldb E:\nosave\FoundryVTT\Data\modules\Valombreuse5eGMG\packs\gamemaster-feats; recovered 2 files; 7157 bytes. Some data may have been lost. ****
+2025/10/21-08:22:43.703534 30b641000 Recovering log #1885
+2025/10/21-08:22:43.704341 30b641000 Delete type=3 #1884
+2025/10/21-08:22:43.704459 30b641000 Delete type=0 #1885
+2025/10/21-12:41:52.322670 3045b7000 Level-0 table #1889: started
+2025/10/21-12:41:52.322784 3045b7000 Level-0 table #1889: 0 bytes OK
+2025/10/21-12:41:52.323188 3045b7000 Delete type=0 #1887
+2025/10/21-12:41:52.324795 3045b7000 Manual compaction at level-0 from '!items!8L4qPTF4WMm1V5Nm' @ 72057594037927935 : 1 .. '!items!wZAv7Y7pZKbW6Dgd' @ 0 : 0; will stop at '!items!wZAv7Y7pZKbW6Dgd' @ 35 : 1
+2025/10/21-12:41:52.324807 3045b7000 Compacting 2@0 + 0@1 files
+2025/10/21-12:41:52.325278 3045b7000 Generated table #1890@0: 18 keys, 7065 bytes
+2025/10/21-12:41:52.325294 3045b7000 Compacted 2@0 + 0@1 files => 7065 bytes
+2025/10/21-12:41:52.325385 3045b7000 compacted to: files[ 0 1 0 0 0 0 0 ]
+2025/10/21-12:41:52.325437 3045b7000 Delete type=2 #128
+2025/10/21-12:41:52.325679 3045b7000 Delete type=2 #1883
+2025/10/21-12:41:52.325973 3045b7000 Manual compaction at level-0 from '!items!wZAv7Y7pZKbW6Dgd' @ 35 : 1 .. '!items!wZAv7Y7pZKbW6Dgd' @ 0 : 0; will stop at (end)

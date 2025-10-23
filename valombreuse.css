@@ -4264,3 +4264,13 @@
   background: var(--dnd5e-background-5);
   border-radius: 6px;
 }
+
+.vein-awakening-loss {
+  text-align: center;
+  width: 60px;
+  font-size: var(--font-size-16);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: #d4af37;
+  background: rgba(255, 255, 255, 0.05);
+}

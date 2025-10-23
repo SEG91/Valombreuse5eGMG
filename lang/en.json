@@ -103,5 +103,7 @@
   "Valombreuse5eGMG.Odysseys.Added": "Odyssey attached.",
   "Valombreuse5eGMG.Odysseys.DropHint": "GM: Drag & drop a Journal here to attach it to the Vein.",
    "Valombreuse5eGMG.secrets.hintDrag": "Grasp a secret and let it flow… the blood never forgets.",
-  "Valombreuse5eGMG.secrets.hintDrop": "Release it here, where the Vein remembers its whispers."
+  "Valombreuse5eGMG.secrets.hintDrop": "Release it here, where the Vein remembers its whispers.",
+  "Valombreuse5eGMG.ui.awakeningLoss": "Awakening Loss",
+"Valombreuse5eGMG.ui.awakeningLossHint": "Represents awakening points lost through sacrifices or rituals."
 }
