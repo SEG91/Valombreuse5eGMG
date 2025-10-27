@@ -124,7 +124,7 @@
       "banner": "modules/Valombreuse5eGMG/assets/images/coverGMG.png"
     },
      {
-      "label": "Scenes",
+      "label": "GM Scenes",
       "type": "Scene",
       "name": "scene--in-sole-veritas",
       "path": "packs/scene--in-sole-veritas.db",
@@ -132,6 +132,19 @@
       "private": false,
       "flags": {},
       "banner": "modules/Valombreuse5eGMG/assets/images/coverGMG.png"
+    },
+     {
+      "label": "Bestiary of Céphéus",
+      "type": "Actor",
+      "name": "bestiary-of-cepheus",
+      "path": "packs/bestiary-of-cepheus",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {},
+    "banner": "modules/Valombreuse5eGMG/assets/images/coverGMG.png"
     }
   ],
     "languages": [
