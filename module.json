@@ -9,7 +9,7 @@
       "flags": {}
     }
   ],
-  "version": "0.3",
+  "version": "0.4",
   "compatibility": {
     "minimum": "13",
     "verified": "13.346"
@@ -133,6 +133,16 @@
       "flags": {},
       "banner": "modules/Valombreuse5eGMG/assets/images/coverGMG.png"
     },
+	{
+      "label": "Critical Wounds",
+      "type": "Item",
+      "name": "conditions-valombreuse",
+      "path": "packs/conditions-valombreuse.db",
+      "system": "dnd5e",
+      "private": false,
+      "flags": {},
+      "banner": "modules/Valombreuse5eGMG/assets/images/coverGMG.png"
+    },
      {
       "label": "Bestiary of Céphéus",
       "type": "Actor",
@@ -145,6 +155,19 @@
       },
       "flags": {},
     "banner": "modules/Valombreuse5eGMG/assets/images/coverGMG.png"
+    },
+    {
+      "label": "Critical Wound Tables",
+      "type": "RollTable",
+      "name": "critical-wound-tables",
+      "path": "packs/critical-wound-tables",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {},
+      "banner": "modules/Valombreuse5eGMG/assets/images/coverGMG.png"
     }
   ],
     "languages": [
